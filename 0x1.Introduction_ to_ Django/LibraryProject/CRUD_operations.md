@@ -19,9 +19,9 @@ book.save()
 <Book: 1984 is written by George Orwell >
 
 <!-- Retrieve the book -->
-book = Book.objects.get(id=1)
-print(f"The book tittle is {book.title}, author is { book.author}, published year is {book.publicatio
-n_year}")
+
+book = Book.objects.get(title="1984")
+print(book.title, book.author, book.publication_year)
 
 <!-- Expected output -->
 The book tittle is 1984, author is George Orwell, published year is 1949
