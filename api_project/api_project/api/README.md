@@ -1,1 +1,0 @@
-ALL you need to know about my application

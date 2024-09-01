@@ -1,1 +1,0 @@
-Building APIs with Django REST Framework” (DRF) Using RESTful APIs. This project is tailored to explore the core concepts of API development with DRF, including setting up a new Django project, creating serializers, viewsets, and implementing authentication and permissions.
