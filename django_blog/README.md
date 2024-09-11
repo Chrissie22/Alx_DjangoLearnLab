@@ -1,0 +1,1 @@
+Django project specifically for a blog, which includes configuring the environment, establishing the initial models, and preparing the base templates.
