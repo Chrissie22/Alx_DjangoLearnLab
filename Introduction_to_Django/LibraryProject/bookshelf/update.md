@@ -1,8 +1,10 @@
-# Update the title
-```python
+# update.md
 
-from bookshelf.models import Book
-book = Book.objects.get(title="Django")
-book.title = "Django Models"
-book.save()
-print(book.title)
+```python
+# Open the Django shell:
+>>> from bookshelf.models import Book
+>>> book = Book.objects.get(title="1984")
+>>> book.title = "Nineteen Eighty-Four"
+>>> book.save()
+>>> book
+<Book: Nineteen Eighty-Four>
