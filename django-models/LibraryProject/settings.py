@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bookshelf.apps.BookshelfConfig', # Custom Application for managing books
-    'relationship_app.apps.RelationshipAppConfig'
+    'LibraryProject.relationship_app.apps.RelationshipAppConfig'
 ]
 
 MIDDLEWARE = [
