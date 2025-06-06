@@ -8,7 +8,7 @@ from django.views.generic import ListView, DetailView, CreateView
 
 # Create your views here.
 
-def list_book(request): 
+def list_books(request): 
     books = Book.objects.all() 
     context = {"book_list": books}
     return render(request, "list_books.html", {"books":books})
