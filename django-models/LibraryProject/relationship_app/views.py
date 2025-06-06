@@ -2,8 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Author, Book, Librarian, Library
 from django.http import HttpResponseRedirect
-from django.views import generic
-from django.views.generic import DetailView
+from django.views.generic import DetailView,ListView
 from .models import Library
 
 
