@@ -10,7 +10,7 @@ from django.views.generic import ListView, DetailView, CreateView
 
 def list_books(request): 
     books = Book.objects.all() 
-    context = {"book_list": books}
+    context = {"books": books}
     return render(request, "list_books.html", {"books":books})
 
 
