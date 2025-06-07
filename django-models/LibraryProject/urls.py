@@ -18,8 +18,9 @@ from django.contrib import admin
 from django.urls import path, include
 from LibraryProject.relationship_app import views
 from LibraryProject.relationship_app.views import list_books, LibraryDetailView
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("LibraryProject.relationship_app.urls")),
+    path('', include('relationship_app.urls')),  # Changed from 'books/
 ]
