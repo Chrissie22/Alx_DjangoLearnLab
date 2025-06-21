@@ -1,0 +1,31 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Django migrations
+**/migrations/
+!*/migrations/__init__.py
+
+# Environment files
+.env
+*.env
+
+# VS Code / IDE
+.vscode/
+.idea/
+
+# Pipenv
+*.venv/
+Pipfile.lock
+# Virtual environments
+
+# SQLite database (if used)
+db.sqlite3
+
+# Media / static (if generated dynamically)
+media/
+staticfiles/
+
+# Node stuff (if using npm/yarn)
+node_modules/
