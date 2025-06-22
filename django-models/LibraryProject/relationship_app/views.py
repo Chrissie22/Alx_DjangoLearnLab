@@ -5,7 +5,7 @@ from .models import Library
 from django.views.generic.detail import DetailView
 from django.views import generic
 from django.views.generic import ListView, CreateView
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 
@@ -30,30 +30,7 @@ class LibraryDetailView(DetailView):
         library = self.get_object()
         context['books'] = library.books.select_related('author').all()
         return context
-    
- 
- 
-def user_login(request):
-    if request.method == "POST":
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get("username")
-            password = form.cleaned_data.get("password")
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect("home")
-            else:
-                messages.error(request, "Invalid username or password.")
-        else:
-            messages.error(request, "Invalid username or password.")
-    else:
-        form = AuthenticationForm()
-    return render(request, "relationship_app/login.html", {"form": form})
 
-def user_logout(request):
-    logout(request)
-    return render(request, "relationship_app/logout.html")
 
 def register(request):
     if request.method == "POST":
@@ -64,6 +41,8 @@ def register(request):
             return redirect("home")
         else:
             messages.error(request, "Registeration failed. Please try again.")
+    else:
+        form = UserCreationForm()
             
                
 def home(request):
