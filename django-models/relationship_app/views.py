@@ -8,6 +8,8 @@ from django.views.generic import ListView, CreateView
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required, user_passes_test
+from .models import UserProfile
 
 
 
@@ -49,5 +51,18 @@ def register(request):
 def home(request):
     return render(request, 'relationship_app/home.html')
             
-        
-    
+@login_required
+@user_passes_test(is_admin)       
+def admin_view(request):
+    return render(request, 'relationship_app/admin_view.html')
+
+@login_required
+@user_passes_test(is_librarian)
+def librarian_view(request):
+    return render(request, 'relationship_app/librarian_view.html')
+
+
+
+def member_view(request):
+    libraries = Library.objects.all()
+    return render(request, 'relationship_app/member_view.html')
